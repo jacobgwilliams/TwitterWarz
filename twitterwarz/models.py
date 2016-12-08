@@ -10,12 +10,14 @@ from django.utils import timezone
 
 @python_2_unicode_compatible
 class User(models.Model):
-    token = models.CharField(max_length=300)
+    twitter_handle = models.CharField(max_length=60)
+    email = models.CharField(max_length=80)
+    password_hash = models.CharField(max_length=30)
     last_tweet_retrieval = models.DateTimeField('last tweet retrieval')
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     def __str__(self):
-        return self.token
+        return self.twitter_handle
 
 @python_2_unicode_compatible
 class Tweet(models.Model):
