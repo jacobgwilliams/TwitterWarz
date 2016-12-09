@@ -17,6 +17,6 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^twitterwarz/', include('twitterwarz.urls')),
+    url(r'^', include('twitterwarz.urls')),
     url(r'^admin/', admin.site.urls),
 ]
