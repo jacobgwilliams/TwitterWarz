@@ -3,15 +3,13 @@ from django.shortcuts import render
 import re
 import os
 from IPython import embed
-from helpers import get_last_tweets, get_user_info, tweets_to_dict
+from api_helpers import get_last_tweets, get_user_info, tweets_to_dict
 from django.http import JsonResponse
 
 nonalpha_re = re.compile('[^A-Z]')
 
 class RestView(object):
-    """
-    Subclass this and add GET / POST / etc methods.
-    """
+
     allowed_methods = ('GET', 'PUT', 'POST', 'DELETE', 'HEAD', 'OPTIONS')
     
     def __call__(self, request, *args, **kwargs):

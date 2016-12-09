@@ -1,6 +1,7 @@
 import tweepy
 import os
 from django.http import JsonResponse
+from IPython import embed
 
 CONSUMER_KEY = os.environ['consumer_key']
 CONSUMER_SECRET = os.environ['consumer_secret']
@@ -23,5 +24,9 @@ def tweets_to_dict(tweet_array):
     tweet_dict[tweet.id] = {}
     tweet_dict[tweet.id]['content'] = tweet.text
     tweet_dict[tweet.id]['timestamp'] = tweet.created_at
+    if 'media' in tweet.entities.keys():
+      tweet_dict[tweet.id]['pic_url'] = tweet.entities['media'][0]['media_url']
+    else:
+      tweet_dict[tweet.id]['pic_url'] = None
 
   return tweet_dict
