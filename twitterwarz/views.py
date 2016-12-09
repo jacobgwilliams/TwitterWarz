@@ -7,6 +7,8 @@ from api_helpers import get_last_tweets, get_user_info, tweets_to_dict
 from django.http import JsonResponse
 import json
 import requests
+from django.contrib.auth.models import User
+import random
 
 nonalpha_re = re.compile('[^A-Z]')
 
@@ -49,27 +51,11 @@ class GetUserInfo(RestView):
 def index(request):
     return render(request, 'twitterwarz/index.html')
 
-
-def profile(request):
-    parsedData = []
-    if request.method == 'POST':
-        username = request.POST.get('user')
-        req = requests.get('https://api.github.com/users/' + username)
-        jsonList = []
-        jsonList.append(json.loads(req.content))
-        userData = {}
-        for data in jsonList:
-            userData['name'] = data['name']
-            userData['blog'] = data['blog']
-            userData['email'] = data['email']
-            userData['public_gists'] = data['public_gists']
-            userData['public_repos'] = data['public_repos']
-            userData['avatar_url'] = data['avatar_url']
-            userData['followers'] = data['followers']
-            userData['following'] = data['following']
-        parsedData.append(userData)
-    return render(request, 'twitterwarz/profile.html', {'data': parsedData})
-
 def battle(request):
     return render(request, 'twitterwarz/battle.html')
-    
+
+def new_battle(request):
+    fighter1 = random.choice(User.objects.all)
+    fighter2 = random.choice(User.objects.filter(id=fighter1.id).exclude(a=true))
+    result = battle(fighter1, fighter2)
+    return render(request, 'twitterwarz/fight.html', data: { result: result })
