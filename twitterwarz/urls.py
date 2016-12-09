@@ -1,9 +1,10 @@
 from django.conf.urls import url
 
 from . import views
-from views import OurTwitterApi
+from views import GetTweets, GetUserInfo
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^twitter_user/(.+)$', OurTwitterApi()),
+    url(r'^timeline/(.+)$', GetTweets()),
+    url(r'^twitter_user/(.+)$', GetUserInfo()),
 ]
