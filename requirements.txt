@@ -3,3 +3,4 @@ psycopg2
 requests
 tweepy
 ipython
+Faker

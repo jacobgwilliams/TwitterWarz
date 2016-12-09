@@ -38,3 +38,5 @@ class Battle(models.Model):
     loser = models.ForeignKey(User, on_delete=models.CASCADE, related_name='loser')
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+    def __str__(self):
+        return self.winner
