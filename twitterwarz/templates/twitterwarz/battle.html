@@ -7,22 +7,30 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/twitterwarz.css' %}">
 </head>
-<body>
+<body style="background: url('http://www.amazingwallpaperz.com/wp-content/uploads/Dragon-Fire-HD-Desktop-Background-Wallpapers.jpg')">
   <div id="wrap">
   <div class="container">
     <div class="jumbotron">
       <h1 class="text-center">Battle Zone</h1>
-
         <div class="container text-center">
           <button href="/battle/new" type="button" class="btn btn-danger btn-lg active">Fight</button>
           <button type="button" class="btn btn-warning btn-lg active">Defend</button>
         </div>
       </div>
     </div>
+  <div class="container bg-info">
+    {% for user in users %}
+    <ul>
+      <li>
+      <a href="/user_info/{{user.twitter_handle}}" >{{ user.twitter_handle }}</a>
+      Or see <a href="/latest_tweets/{{user.twitter_handle}}">my tweets</a>!
+      </li>
+    </ul>
+    {% endfor %}
   </div>
   <style>
     .navbar-fixed-bottom {
-      background-color: pink;
+      background-color: darkred;
       height: 8%;
       line-height: 2.3em;
     }
