@@ -18,6 +18,8 @@ class User(models.Model):
     updated = models.DateTimeField(auto_now=True)
     def __str__(self):
         return self.twitter_handle
+    def tweets(self):
+        return self.tweets
 
 @python_2_unicode_compatible
 class Tweet(models.Model):
