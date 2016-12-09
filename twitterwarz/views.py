@@ -7,7 +7,7 @@ from api_helpers import get_last_tweets, get_user_info, tweets_to_dict
 from django.http import JsonResponse
 import json
 import requests
-from django.contrib.auth.models import User
+from twitterwarz.models import User
 import random
 
 nonalpha_re = re.compile('[^A-Z]')
@@ -52,10 +52,11 @@ def index(request):
     return render(request, 'twitterwarz/index.html')
 
 def battle(request):
-    return render(request, 'twitterwarz/battle.html')
+    users = User.objects.all()
+    return render(request, 'twitterwarz/battle.html', {'users': users})
 
 def new_battle(request):
     fighter1 = random.choice(User.objects.all)
     fighter2 = random.choice(User.objects.filter(id=fighter1.id).exclude(a=true))
     result = battle(fighter1, fighter2)
-    return render(request, 'twitterwarz/fight.html', data: { result: result })
+    return render(request, 'twitterwarz/fight.html', {result: result} )
