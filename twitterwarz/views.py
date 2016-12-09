@@ -43,5 +43,6 @@ class GetUserInfo(RestView):
       'location': user_info.location,
       'description': user_info.description,
       'profile_img_url': user_info.profile_image_url,
-      'background_img_url': user_info.profile_background_image_url
+      'background_img_url': user_info.profile_background_image_url,
+      'last_tweet_id': user_info.status.id
       })
