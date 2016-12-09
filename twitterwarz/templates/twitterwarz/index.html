@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/twitterwarz.css' %}">
+</head>
+<body>
+  <div id="wrap">
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="text-center">TwitterWarz</h1>
+      <p class="text-center">The gauntlet has been thrown. Battle against your friends in the most epic of twitter battles.</p>
+
+        <div class="container text-center">
+          <button type="button" class="btn btn-info btn-lg active">Join</button>
+          <button type="button" class="btn btn-info btn-lg active">Login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <style>
+    .navbar-fixed-bottom {
+      background-color: pink;
+      height: 8%;
+      line-height: 2.3em;
+    }
+  </style>
+  <footer class="navbar-fixed-bottom">
+    <div class="container">
+      <div class="container text-center">
+        <p class="text-muted">(C) 2016 TwitterWarz </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

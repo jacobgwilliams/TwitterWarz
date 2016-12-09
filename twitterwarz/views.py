@@ -47,7 +47,7 @@ class GetUserInfo(RestView):
 
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the twitterwarz index.")
+    return render(request, 'twitterwarz/index.html')
 
 
 def profile(request):
@@ -69,3 +69,7 @@ def profile(request):
             userData['following'] = data['following']
         parsedData.append(userData)
     return render(request, 'twitterwarz/profile.html', {'data': parsedData})
+
+def battle(request):
+    return render(request, 'twitterwarz/battle.html')
+    

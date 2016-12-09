@@ -85,7 +85,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'twitterwarzdb',
-        'USER': os.environ['DB_USER'],
+        'USER': 'cat',
         'PASSWORD': 'password',
         'HOST': 'localhost',
         'PORT': '',
