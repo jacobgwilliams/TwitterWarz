@@ -5,6 +5,6 @@ from views import GetTweets, GetUserInfo
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^timeline/(.+)$', GetTweets()),
-    url(r'^twitter_user/(.+)$', GetUserInfo()),
+    url(r'^latest_tweets/(.+)$', GetTweets()),
+    url(r'^user_info/(.+)$', GetUserInfo()),
 ]
