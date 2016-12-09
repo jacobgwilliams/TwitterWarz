@@ -18,13 +18,13 @@
 
 
       <div class="container text-center">
-          <form class="form-signin" id="login_form" method="post" action="/app/profile/">
+          <form class="form-signin" id="login_form" method="post" action="/twitterwarz/profile/">
 
             {% csrf_token %}
 
 
             <br>
-            <input type="text" name="user" class="form-control" placeholder="Github User Name, e.g: DrkSephy" value="" required autofocus>
+            <input type="text" name="user" class="form-control" placeholder="Github User Name, e.g: catkhuu" value="" required autofocus>
             <br>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Get Data</button>
           </form>
